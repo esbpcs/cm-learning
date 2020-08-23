@@ -103,7 +103,7 @@ export default {
     config: {}, // Additional config
   },
   gtm: {
-    id: 'G-KBNSC52J5G.',
+    id: 'GTM-KP79PZW',
   },
   oneSignal: {
     init: {

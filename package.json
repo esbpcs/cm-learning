@@ -1,5 +1,5 @@
 {
-  "name": "eLearn-tailwind",
+  "name": "cm-learning",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -25,7 +25,6 @@
     "eslint-plugin-pug": "^1.2.2",
     "firebase": "^7.19.0",
     "global": "^4.4.0",
-    "localtunnel": "^2.0.0",
     "nuxt": "^2.14.3",
     "nuxt-i18n": "^6.13.10"
   },

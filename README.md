@@ -1,5 +1,7 @@
 # eLearn-tailwind
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c75cd3d7-cf3c-48b3-9fcb-cd27da26d2b9/deploy-status)](https://app.netlify.com/sites/cm-learning/deploys)
+
 ## Build Setup
 
 ```bash
