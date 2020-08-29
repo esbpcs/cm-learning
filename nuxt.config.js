@@ -1,54 +1,39 @@
 export default {
-  /*
-   ** Nuxt rendering mode
-   ** See https://nuxtjs.org/api/configuration-mode
-   */
   mode: 'universal',
-  /*
-   ** Nuxt target
-   ** See https://nuxtjs.org/api/configuration-target
-   */
   target: 'server',
-  /*
-   ** Headers of the page
-   ** See https://nuxtjs.org/api/configuration-head
-   */
   head: {
     title: 'CM Learning',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-    ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-  },
-  /*
-   ** Global CSS
-   */
-  css: [],
-  /*
-   ** Plugins to load before mounting the App
-   ** https://nuxtjs.org/guide/plugins
-   */
-  plugins: [],
-  /*
-   ** Auto import components
-   ** See https://nuxtjs.org/api/configuration-components
-   */
-  components: true,
-  /*
-   ** Nuxt.js dev-modules
-   */
-  buildModules: [
-    '@nuxt/typescript-build',
-    // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    [
-      '@nuxtjs/tailwindcss',
       {
-        future: {
-          removeDeprecatedGapUtilities: true,
-        },
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1, shrink-to-fit=no',
+      },
+      {
+        author: ' CM Media Team',
       },
     ],
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '16x16',
+        href: '/assets/placeholders/icons/favicon.png',
+      },
+      {
+        rel: 'apple-touch-icon',
+        type: 'image/png',
+        sizes: '192x192',
+        href: '/assets/placeholders/icons/apple-touch.png',
+      },
+    ],
+  },
+  css: [],
+  plugins: [],
+  components: true,
+  buildModules: [
+    '@nuxt/typescript-build',
+    '@nuxtjs/tailwindcss',
     [
       '@nuxtjs/google-analytics',
       {
@@ -56,11 +41,7 @@ export default {
       },
     ],
   ],
-  /*
-   ** Nuxt.js modules
-   */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/onesignal',
     '@nuxtjs/pwa',
@@ -68,15 +49,7 @@ export default {
     '@nuxtjs/gtm',
     'nuxt-i18n',
   ],
-  /*
-   ** Axios module configuration
-   ** See https://axios.nuxtjs.org/options
-   */
   axios: {},
-  /*
-   ** Build configuration
-   ** See https://nuxtjs.org/api/configuration-build/
-   */
   build: {
     extend(config, { isDev, isClient }) {
       if (isDev && isClient) {
@@ -97,6 +70,22 @@ export default {
       }
     },
   },
+  server: {
+    // Set server port
+    port: 8080,
+  },
+  tailwindcss: {
+    future: {
+      removeDeprecatedGapUtilities: true,
+    },
+  },
+  browserslist: [
+    'defaults',
+    'maintained node versions',
+    'not IE 11',
+    'not IE_Mob 11',
+    'last 2 versions',
+  ],
   sentry: {
     dsn:
       'https://0a4d49b8d1644ec78a00d21544e031f9@o292739.ingest.sentry.io/5393079', // Project DSN
