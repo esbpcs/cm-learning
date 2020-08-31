@@ -3,6 +3,9 @@
     
             Header
             section(class="py-12 px-4")
+            
+                Notification
+
                 div(class="flex flex-wrap items-center text-center lg:text-left -mx-2")
                     div(class="lg:w-1/2 px-2 lg:pr-10 mt-10 lg:mt-0 order-1 lg:order-none")
                         h2(class="text-5xl mb-6 leading-tight font-heading") CM Online Learning Platform

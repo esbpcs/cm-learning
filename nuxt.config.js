@@ -28,6 +28,13 @@ export default {
       },
     ],
   },
+  publicRuntimeConfig: {
+    baseURL: process.env.BASE_URL,
+  },
+  privateRuntimeConfig: {
+    codeCov: process.env.CODECOV_TOKEN,
+    hCaptcha: process.env.SITEKEY,
+  },
   css: [],
   plugins: [],
   components: true,
@@ -109,8 +116,8 @@ export default {
         fallbackLocale: 'en',
         messages: {
           en: {
-            login: 'Login',
-            register: 'Register',
+            login: 'Sign in',
+            register: 'Sign up',
           },
           id: {
             login: 'Masuk',

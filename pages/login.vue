@@ -3,7 +3,7 @@
 
             Header
             section(class="w-full max-w-sm mx-auto py-10")
-                form
+                form(name="Login" method="POST" data-netlify="true")
                     div(class="mb-4")
                         label(for="email" class="text-gray-700 text-sm font-bold") Email:
                             input(class="appearance-none block w-full py-3 px-4 leading-tight text-gray-700 bg-gray-200 focus:bg-white border border-gray-200 focus:border-gray-500 rounded focus:outline-none" id="email" type="text")
