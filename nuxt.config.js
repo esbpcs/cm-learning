@@ -109,35 +109,36 @@ export default {
         disable: true,
       },
     },
-    i18n: {
-      locales: ['en', 'id'],
-      defaultLocale: 'en',
-      vue18n: {
-        fallbackLocale: 'en',
-        messages: {
-          en: {
-            login: 'Sign in',
-            register: 'Sign up',
-          },
-          id: {
-            login: 'Masuk',
-            register: 'Daftar',
-          },
+  },
+  i18n: {
+    locales: ['en', 'id'],
+    defaultLocale: 'en',
+    vue18n: {
+      fallbackLocale: 'en',
+      messages: {
+        en: {
+          login: 'Sign in',
+          register: 'Sign up',
+        },
+        id: {
+          login: 'Masuk',
+          register: 'Daftar',
         },
       },
-      pwa: {
-        icon: 'false',
-        meta: {
-          title: 'CM Learning App',
-          author: 'CM Media Team',
-        },
-        manifest: {
-          name: 'CM Online Learning',
-          lang: 'en',
-          short_name: 'CM-Learn',
-          description: 'CM Online Learning PWA App',
-        },
-      },
+    },
+  },
+  pwa: {
+    icon: 'false',
+    meta: {
+      title: 'CM Learning App',
+      author: 'CM Media Team',
+    },
+    manifest: {
+      name: 'CM Online Learning',
+      lang: 'en',
+      short_name: 'CM-Learn',
+      description: 'CM Online Learning PWA App',
+      display: 'fullscreen',
     },
   },
 }
