@@ -6,18 +6,19 @@
             h2(class="text-3xl text-center mb-8 font-heading") Latest Courses
             
             div(class="flex flex-wrap mx-4")
-              div(class="w-full lg:w-1/3 px-4 mb-8 lg:mb-0")
+              div(v-for="course in courses" :key="course.id" class="w-full lg:w-1/3 px-4 mb-8 lg:mb-0")
                 div(class="h-full pb-8 rounded shadow-md")
-                    img(src="@/assets/images/Snow_Dots_Blue_Desktop_Wallpaper.png" class="mb-4" alt="Course Thumbnail")
+                    img(v-bind:src="course.postThumbnail" class="mb-4" alt="Course Thumbnail")
                     div(class="px-6")
-                      small 22 August 2020 | By Elang
-                      h3(class="text-xl my-3 font-heading") Course name
-                      p(class="text-gray-500") Course Desc
+                      small {{ course.posted }} | By {{ course.user }}
+                      h3(class="text-xl my-3 font-heading") {{ course.name }}
+                      p(class="text-gray-500") {{ course.description }}
             Footer
 
 </template>
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+export default Vue.extend({
   data() {
     return {
       courses: [
@@ -27,15 +28,15 @@ export default {
           posted: '20 August 2020',
           user: 'Ambrosious',
           description: 'Theology 101 by Ambrosious, Phd ',
-          imagePost: '@/assets/images/Snow_Dots_Blue_Desktop_Wallpaper.png',
+          postThumbnail: 'images/img1.png',
         },
         {
           id: '2',
           name: 'Intro to Islamic Theology',
           posted: '19 August 2020',
           user: 'Emberman',
-          description: '101 by Anonymous Author Mr.Emberman,M.Div,Phd',
-          imagePost: '',
+          description: '101 by Anonymous Author Mr.Emberman, M.Div, Phd',
+          postThumbnail: '',
         },
         {
           id: '3',
@@ -43,11 +44,10 @@ export default {
           posted: '23 August 2020',
           user: 'Dosier',
           description: 'Seriously my friend this is an irony',
-          imagePost: '',
+          postThumbnail: '',
         },
       ],
     }
   },
-  computed: {},
-}
+})
 </script>

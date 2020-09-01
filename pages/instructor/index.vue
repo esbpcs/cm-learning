@@ -1,14 +1,5 @@
 <template lang="pug">
-    head
-        title Dashboard
-        meta(charset="utf-8")
-        meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
-        meta(name="description" content="Instructor Dashboard")
-        meta(name="author" content="CM Media Team")
-        link(rel="icon" href="favicon.ico")
-        link(rel="icon" type="image/png" sizes="16x16" href="favicon.png")
-        body.bg-body.text-body.font-body
-        .container.mx-auto.px-4
+    .container.mx-auto.px-4
 
         InstructorHeader
         section(class="py-8 px-4")
@@ -64,7 +55,12 @@
         Footer
 </template>
 <script lang="ts">
-// import Vue from 'vue'
+import Vue from 'vue'
 // import Gravatar from 'vue-gravatar'
-// Vue.component('v-gravatar, Gravatar')
+export default Vue.extend({
+  name: 'InstructorDashboard',
+  data() {
+    return {}
+  },
+})
 </script>

@@ -1,14 +1,5 @@
 <template lang="pug">
-    head
-        title Create Blog Post
-        meta(charset="utf-8")
-        meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
-        meta(name="description" content="Create Blog Post Form")
-        meta(name="author" content="CM Media Team")
-        link(rel="icon" href="favicon.ico")
-        link(rel="icon" type="image/png" sizes="16x16" href="favicon.png")
-        body.bg-body.text-body.font-body
-        .container.mx-auto.px-4
+    .container.mx-auto.px-4
 
         Header
         form(class="w-full max-w-sm mx-auto py-10" action="#" method="post"  )
@@ -39,4 +30,9 @@
                     button(type="submit" class="inline-block w-auto py-4 px-8 leading-none text-white bg-indigo-500 hover:bg-indigo-600 rounded shadow" ) Cancel
         Footer
 </template>
-<script lang="ts"></script>
+<script lang="ts">
+import Vue from 'vue'
+export default Vue.extend({
+  name: 'CreatePostPage',
+})
+</script>

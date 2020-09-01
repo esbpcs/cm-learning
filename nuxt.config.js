@@ -4,7 +4,7 @@ export default {
   head: {
     title: 'CM Learning',
     meta: [
-      { charset: 'utf-8' },
+      { charset: 'UTF-8' },
       {
         name: 'viewport',
         content: 'width=device-width, initial-scale=1, shrink-to-fit=no',
@@ -18,13 +18,13 @@ export default {
         rel: 'icon',
         type: 'image/png',
         sizes: '16x16',
-        href: '/assets/placeholders/icons/favicon.png',
+        href: '/favicon.png',
       },
       {
         rel: 'apple-touch-icon',
         type: 'image/png',
         sizes: '192x192',
-        href: '/assets/placeholders/icons/apple-touch.png',
+        href: '/apple-touch.png',
       },
     ],
   },
@@ -123,6 +123,19 @@ export default {
             login: 'Masuk',
             register: 'Daftar',
           },
+        },
+      },
+      pwa: {
+        icon: 'false',
+        meta: {
+          title: 'CM Learning App',
+          author: 'CM Media Team',
+        },
+        manifest: {
+          name: 'CM Online Learning',
+          lang: 'en',
+          short_name: 'CM-Learn',
+          description: 'CM Online Learning PWA App',
         },
       },
     },
