@@ -16,5 +16,5 @@ steps:
   displayName: 'Install Node 10'
 
 - script: |
-   yarn global add npm-check-updates && ncu -u && yarn global update && yarn install && yarn generate && bash <(curl -s https://codecov.io/bash)
+   yarn global update && yarn install && yarn generate && bash <(curl -s https://codecov.io/bash)
   displayName: 'Combo'
