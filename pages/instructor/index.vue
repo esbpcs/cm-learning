@@ -37,30 +37,48 @@
                             th(class="text-center border-t px-2 py-2", scope="col") Date
                             th(class="text-center border-t px-2 py-2", scope="col") Action
                     tbody
-                        tr
-                            td(class="border-t px-2 py-2") 1
-                            td(class="border-t px-2 py-2")
-                                a(href="#")
-                                    img(class="inline-block mr-2 rounded-full", src="@/assets/placeholders/pictures/male_avatar.svg", alt="", width="40", height="40")
-                                    |  Elang Swa Buana Putra
-                            td(class="border-t px-2 py-2") elangsbp@gmail.com
-                            td(class="border-t px-2 py-2") Course #1
+                        tr(v-for="course in courseList" :key="course.id" class="text-center")
+                            td(class="border-t px-2 py-2") {{course.id}}
+                            td(class="border-t px-2 py-2") {{course.user}}
+                            td(class="border-t px-2 py-2") {{course.email}}
+                            td(class="border-t px-2 py-2") {{course.title}}
                             td(class="text-center border-t px-2 py-2")
-                                span(class="inline-block text-sm py-1 px-3 rounded-full text-white bg-yellow-500") New
-                            td(class="text-center border-t px-2 py-2") Study #1
-                            td(class="text-center border-t px-2 py-2") 01-08-2020
+                                span(class="inline-block text-sm py-1 px-3 rounded-full text-white bg-blue-500") {{course.status}}
+                            td(class="text-center border-t px-2 py-2") {{course.category}}
+                            td(class="text-center border-t px-2 py-2") {{course.posted}}
                             td(class="text-center border-t px-2 py-2")
-                                a(class="text-blue-700 hover:underline mx-1", href="#") Edit
-                                a(class="text-blue-700 hover:underline", href="#") Delete
+                                a(class="text-blue-700 hover:underline mx-1", href="editPost") Edit
+                                a(class="text-blue-700 hover:underline", href="deletePost") Delete
         Footer
 </template>
 <script lang="ts">
 import Vue from 'vue'
-// import Gravatar from 'vue-gravatar'
 export default Vue.extend({
   name: 'InstructorDashboard',
   data() {
-    return {}
+    return {
+      courseList: [
+        {
+          id: '1',
+          user: 'elangsbp',
+          email: 'elangsbp@mock.net',
+          title: 'How to Create a Website',
+          status: 'Published',
+          category: 'Web Development',
+          posted: '01 September 2020',
+        },
+        {
+          id: '2',
+          user: 'Test',
+          email: 'test@mock.net',
+          title: 'How to Create a Nuxt.js App',
+          status: 'Published',
+          category: 'Web Development',
+          posted: '01 September 2020',
+        },
+      ],
+    }
   },
+  computed: {},
 })
 </script>

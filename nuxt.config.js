@@ -38,22 +38,13 @@ export default {
   css: [],
   plugins: [],
   components: true,
-  buildModules: [
-    '@nuxt/typescript-build',
-    '@nuxtjs/tailwindcss',
-    [
-      '@nuxtjs/google-analytics',
-      {
-        id: 'G-KBNSC52J5G',
-      },
-    ],
-  ],
+  buildModules: ['@nuxt/typescript-build', '@nuxtjs/tailwindcss'],
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/onesignal',
     '@nuxtjs/pwa',
     '@nuxtjs/sentry',
-    '@nuxtjs/gtm',
+    '@nuxtjs/firebase',
     'nuxt-i18n',
   ],
   axios: {},
@@ -98,9 +89,6 @@ export default {
       'https://0a4d49b8d1644ec78a00d21544e031f9@o292739.ingest.sentry.io/5393079', // Project DSN
     config: {}, // Additional config
   },
-  gtm: {
-    id: 'GTM-KP79PZW',
-  },
   oneSignal: {
     init: {
       appId: '83dc5344-5310-4861-89b6-feb11cff9617',
@@ -139,6 +127,29 @@ export default {
       short_name: 'CM-Learn',
       description: 'CM Online Learning PWA App',
       display: 'fullscreen',
+    },
+  },
+  firebase: {
+    config: {
+      apiKey: 'AIzaSyCm5swynVMNBWwtYUv5uaFjZZY4JyKJih0',
+      authDomain: 'cm-learning.firebaseapp.com',
+      databaseURL: 'https://cm-learning.firebaseio.com',
+      projectId: 'cm-learning',
+      storageBucket: 'cm-learning.appspot.com',
+      messagingSenderId: '983649433255',
+      appId: '1:983649433255:web:6ec3eb56f9bfe485550d82',
+      measurementId: 'G-BRGDCVPZDZ',
+    },
+    services: {
+      auth: true,
+      firestore: false,
+      functions: false,
+      storage: false,
+      realtimeDb: true,
+      messaging: false,
+      performance: true,
+      analytics: true,
+      remoteConfig: false,
     },
   },
 }

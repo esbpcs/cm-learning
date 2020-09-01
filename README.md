@@ -10,7 +10,7 @@ $ yarn install
 OR
 $ npm install
 
-# serve with hot reload at localhost:3000
+# serve with hot reload at localhost:8080
 $ yarn dev
 OR
 $ npm dev
