@@ -7,14 +7,14 @@ trigger:
 - next
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'macOS-10.15'
 
 steps:
 - task: NodeTool@0
   inputs:
     versionSpec: '10.x'
-  displayName: 'Install Node.js'
+  displayName: 'Install Node 10'
 
 - script: |
-    npm install && npm run generate
-  displayName: 'npm install and generate'
+   yarn global add npm-check-updates && ncu -u && yarn global update && yarn install && yarn generate && bash <(curl -s https://codecov.io/bash)
+  displayName: 'Combo'
