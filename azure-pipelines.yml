@@ -7,6 +7,7 @@ trigger:
   - next
 
 pool:
+<<<<<<< Updated upstream
   vmImage: "macOS-latest"
 
 steps:
@@ -18,3 +19,30 @@ steps:
   - script: |
       yarn global upgrade && yarn install && yarn generate && bash <(curl -s https://codecov.io/bash)
     displayName: "Upgrade Dep, Install Dep, Generate Site, Upload Coverage Report"
+=======
+<<<<<<< HEAD
+  vmImage: "macOS-latest"
+
+steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: "10.x"
+    displayName: "Install Node 10"
+
+  - script: |
+      yarn global upgrade && yarn install && yarn generate && bash <(curl -s https://codecov.io/bash)
+    displayName: "Upgrade Dep, Install Dep, Generate Site, Upload Coverage Report"
+=======
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    npm install && npm run generate
+  displayName: 'npm install and generate'
+>>>>>>> parent of b40529d... Update azure-pipelines.yml for Azure Pipelines
+>>>>>>> Stashed changes
