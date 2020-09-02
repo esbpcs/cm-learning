@@ -4,10 +4,10 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "dev": "FIRE_ENV=dev nuxt-ts",
-    "build": "FIRE_ENV=prod nuxt-ts build",
+    "dev": "nuxt-ts",
+    "build": "nuxt-ts build",
     "start": "nuxt-ts start",
-    "generate": "FIRE_ENV=prod nuxt-ts generate",
+    "generate": "nuxt-ts generate",
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint": "yarn lint:js",
     "test": "jest"

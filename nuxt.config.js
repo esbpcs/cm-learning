@@ -30,12 +30,8 @@ export default {
   },
   publicRuntimeConfig: {
     baseURL: process.env.BASE_URL,
-    FIRE_ENV: process.env.FIRE_ENV,
   },
-  privateRuntimeConfig: {
-    CODECOV_TOKEN: process.env.CODECOV_TOKEN,
-    SITEKEY: process.env.SITEKEY,
-  },
+  privateRuntimeConfig: {},
   css: [],
   plugins: [],
   components: true,
@@ -86,11 +82,12 @@ export default {
     'last 2 versions',
   ],
   sentry: {
-    dsn: process.env.DSN,
+    dsn:
+      'https://0a4d49b8d1644ec78a00d21544e031f9@o292739.ingest.sentry.io/5393079',
   },
   oneSignal: {
     init: {
-      appId: process.env.ONESIGNAL_API,
+      appId: '83dc5344-5310-4861-89b6-feb11cff9617',
       allowLocalhostAsSecureOrigin: true,
       welcomeNotification: {
         disable: true,
@@ -116,10 +113,7 @@ export default {
   },
   pwa: {
     icon: 'false',
-    meta: {
-      title: 'CM Learning App',
-      author: 'CM Media Team',
-    },
+    meta: 'false',
     manifest: {
       name: 'CM Online Learning',
       lang: 'en',
@@ -127,36 +121,29 @@ export default {
       description: 'CM Online Learning PWA App',
       display: 'fullscreen',
     },
+    workbox: {
+      importScripts: ['firebase-auth-sw.js'],
+      // by default the workbox module will not install the service worker in dev environment to avoid conflicts with HMR
+      // only set this true for testing and remember to always clear your browser cache in development
+      dev: true,
+    },
   },
   firebase: {
     config: {
-      prod: {
-        apiKey: process.env.FIREBASE_API_PROD,
-        authDomain: process.env.FIREBASE_AUTH_PROD,
-        databaseURL: process.env.FIREBASE_DATABASE_PROD,
-        projectId: process.env.FIREBASE_PROJECT_PROD,
-        storageBucket: process.env.FIREBASE_BUCKET_PROD,
-        messagingSenderId: process.env.FIREBASE_MSG_SENDER_PROD,
-        appId: process.env.FIREBASE_APPID_PROD,
-        measurementId: process.env.FIREBASE_ANALYTICS_PROD,
-      },
-      dev: {
-        apiKey: process.env.FIREBASE_API_DEV,
-        authDomain: process.env.FIREBASE_AUTH_DEV,
-        databaseURL: process.env.FIREBASE_DATABASE_DEV,
-        projectId: process.env.FIREBASE_PROJECT_DEV,
-        storageBucket: process.env.FIREBASE_BUCKET_DEV,
-        messagingSenderId: process.env.FIREBASE_MSG_SENDER_DEV,
-        appId: process.env.FIREBASE_APPID_DEV,
-        measurementId: process.env.FIREBASE_ANALYTICS_DEV,
-      },
+      apiKey: 'AIzaSyCpzxozeU3RqgPrR62xadKPbWmVSrOSOro',
+      authDomain: 'cm-learning-next.firebaseapp.com',
+      databaseURL: 'https://cm-learning-next.firebaseio.com',
+      projectId: 'cm-learning-next',
+      storageBucket: 'cm-learning-next.appspot.com',
+      messagingSenderId: '982447278041',
+      appId: '1:982447278041:web:528c83480bd073955bfbc8',
+      measurementId: 'G-6XB3HG8F84',
     },
     services: {
       auth: {
         ssr: true,
       },
       realtimeDb: true,
-      firestore: true,
       performance: true,
       analytics: true,
     },
