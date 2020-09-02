@@ -150,15 +150,15 @@ export default {
         appId: process.env.FIREBASE_APPID_DEV,
         measurementId: process.env.FIREBASE_ANALYTICS_DEV,
       },
-      services: {
-        auth: {
-          ssr: true,
-        },
-        realtimeDb: true,
-        firestore: true,
-        performance: true,
-        analytics: true,
+    },
+    services: {
+      auth: {
+        ssr: true,
       },
+      realtimeDb: true,
+      firestore: true,
+      performance: true,
+      analytics: true,
     },
   },
 }
