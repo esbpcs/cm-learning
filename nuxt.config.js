@@ -30,10 +30,11 @@ export default {
   },
   publicRuntimeConfig: {
     baseURL: process.env.BASE_URL,
+    FIRE_ENV: process.env.FIRE_ENV,
   },
   privateRuntimeConfig: {
-    codeCov: process.env.CODECOV_TOKEN,
-    hCaptcha: process.env.SITEKEY,
+    CODECOV_TOKEN: process.env.CODECOV_TOKEN,
+    SITEKEY: process.env.SITEKEY,
   },
   css: [],
   plugins: [],
@@ -42,8 +43,8 @@ export default {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/onesignal',
-    '@nuxtjs/pwa',
     '@nuxtjs/sentry',
+    '@nuxtjs/pwa',
     '@nuxtjs/firebase',
     'nuxt-i18n',
   ],
@@ -85,13 +86,11 @@ export default {
     'last 2 versions',
   ],
   sentry: {
-    dsn:
-      'https://0a4d49b8d1644ec78a00d21544e031f9@o292739.ingest.sentry.io/5393079', // Project DSN
-    config: {}, // Additional config
+    dsn: process.env.DSN,
   },
   oneSignal: {
     init: {
-      appId: '83dc5344-5310-4861-89b6-feb11cff9617',
+      appId: process.env.ONESIGNAL_API,
       allowLocalhostAsSecureOrigin: true,
       welcomeNotification: {
         disable: true,
@@ -131,25 +130,35 @@ export default {
   },
   firebase: {
     config: {
-      apiKey: 'AIzaSyCm5swynVMNBWwtYUv5uaFjZZY4JyKJih0',
-      authDomain: 'cm-learning.firebaseapp.com',
-      databaseURL: 'https://cm-learning.firebaseio.com',
-      projectId: 'cm-learning',
-      storageBucket: 'cm-learning.appspot.com',
-      messagingSenderId: '983649433255',
-      appId: '1:983649433255:web:6ec3eb56f9bfe485550d82',
-      measurementId: 'G-BRGDCVPZDZ',
+      prod: {
+        apiKey: process.env.FIREBASE_API_PROD,
+        authDomain: process.env.FIREBASE_AUTH_PROD,
+        databaseURL: process.env.FIREBASE_DATABASE_PROD,
+        projectId: process.env.FIREBASE_PROJECT_PROD,
+        storageBucket: process.env.FIREBASE_BUCKET_PROD,
+        messagingSenderId: process.env.FIREBASE_MSG_SENDER_PROD,
+        appId: process.env.FIREBASE_APPID_PROD,
+        measurementId: process.env.FIREBASE_ANALYTICS_PROD,
+      },
+      dev: {
+        apiKey: process.env.FIREBASE_API_DEV,
+        authDomain: process.env.FIREBASE_AUTH_DEV,
+        databaseURL: process.env.FIREBASE_DATABASE_DEV,
+        projectId: process.env.FIREBASE_PROJECT_DEV,
+        storageBucket: process.env.FIREBASE_BUCKET_DEV,
+        messagingSenderId: process.env.FIREBASE_MSG_SENDER_DEV,
+        appId: process.env.FIREBASE_APPID_DEV,
+        measurementId: process.env.FIREBASE_ANALYTICS_DEV,
+      },
     },
     services: {
-      auth: true,
-      firestore: false,
-      functions: false,
-      storage: false,
+      auth: {
+        ssr: true,
+      },
       realtimeDb: true,
-      messaging: false,
+      firestore: true,
       performance: true,
       analytics: true,
-      remoteConfig: false,
     },
   },
 }

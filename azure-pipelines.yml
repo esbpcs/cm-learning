@@ -4,17 +4,17 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
-- next
+  - next
 
 pool:
-  vmImage: 'macOS-latest'
+  vmImage: "macOS-latest"
 
 steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '10.x'
-  displayName: 'Install Node 10'
+  - task: NodeTool@0
+    inputs:
+      versionSpec: "10.x"
+    displayName: "Install Node 10"
 
-- script: |
-   yarn global upgrade && yarn install && yarn generate && bash <(curl -s https://codecov.io/bash)
-  displayName: 'Combo'
+  - script: |
+      yarn global upgrade && yarn install && yarn generate && bash <(curl -s https://codecov.io/bash)
+    displayName: "Upgrade Dep, Install Dep, Generate Site, Upload Coverage Report"
