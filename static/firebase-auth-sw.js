@@ -1,35 +1,3 @@
-<<<<<<< Updated upstream
-const ignorePaths = [
-  '\u002F__webpack_hmr',
-  '\u002F_loading',
-  '\u002F_nuxt\u002F',
-]
-
-importScripts('https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js')
-importScripts('https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js')
-firebase.initializeApp({
-  prod: {
-    apiKey: undefined,
-    authDomain: undefined,
-    databaseURL: undefined,
-    projectId: undefined,
-    storageBucket: undefined,
-    messagingSenderId: undefined,
-    appId: undefined,
-    measurementId: undefined,
-  },
-  dev: {
-    apiKey: undefined,
-    authDomain: undefined,
-    databaseURL: undefined,
-    projectId: undefined,
-    storageBucket: undefined,
-    messagingSenderId: undefined,
-    appId: undefined,
-    measurementId: undefined,
-  },
-})
-=======
 const ignorePaths = ["\u002F__webpack_hmr","\u002F_loading","\u002F_nuxt\u002F"]
 
 importScripts(
@@ -39,7 +7,6 @@ importScripts(
   'https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js'
 )
 firebase.initializeApp({"prod":{"apiKey":undefined,"authDomain":undefined,"databaseURL":undefined,"projectId":undefined,"storageBucket":undefined,"messagingSenderId":undefined,"appId":undefined,"measurementId":undefined},"dev":{"apiKey":undefined,"authDomain":undefined,"databaseURL":undefined,"projectId":undefined,"storageBucket":undefined,"messagingSenderId":undefined,"appId":undefined,"measurementId":undefined}})
->>>>>>> Stashed changes
 
 /**
  * Returns a promise that resolves with an ID token if available.
@@ -52,22 +19,11 @@ const getIdToken = () => {
       unsubscribe()
       if (user) {
         // force token refresh as it might be used to sign in server side
-<<<<<<< Updated upstream
-        user.getIdToken(true).then(
-          (idToken) => {
-            resolve(idToken)
-          },
-          () => {
-            resolve(null)
-          }
-        )
-=======
         user.getIdToken(true).then((idToken) => {
           resolve(idToken)
         }, () => {
           resolve(null)
         })
->>>>>>> Stashed changes
       } else {
         resolve(null)
       }
@@ -78,11 +34,7 @@ const getIdToken = () => {
 const fetchWithAuthorization = async (original, idToken) => {
   // Clone headers as request headers are immutable.
   const headers = new Headers()
-<<<<<<< Updated upstream
-  for (const entry of original.headers.entries()) {
-=======
   for (let entry of original.headers.entries()) {
->>>>>>> Stashed changes
     headers.append(entry[0], entry[1])
   }
 
@@ -95,11 +47,7 @@ const fetchWithAuthorization = async (original, idToken) => {
     ...props,
     mode: 'same-origin',
     redirect: 'manual',
-<<<<<<< Updated upstream
-    headers,
-=======
     headers
->>>>>>> Stashed changes
   })
 
   return fetch(authorized)
@@ -111,18 +59,9 @@ self.addEventListener('fetch', (event) => {
   const expectsHTML = event.request.headers.get('accept').includes('text/html')
 
   const isSameOrigin = self.location.origin === url.origin
-<<<<<<< Updated upstream
-  const isHttps =
-    self.location.protocol === 'https:' ||
-    self.location.hostname === 'localhost' ||
-    self.location.hostname === '127.0.0.1'
-
-  const isIgnored = ignorePaths.some((path) => {
-=======
   const isHttps = (self.location.protocol === 'https:' || self.location.hostname === 'localhost' || self.location.hostname === '127.0.0.1')
 
   const isIgnored = ignorePaths.some(path => {
->>>>>>> Stashed changes
     if (typeof path === 'string') {
       return url.pathname.startsWith(path)
     }
@@ -140,17 +79,6 @@ self.addEventListener('fetch', (event) => {
   // This can also be integrated with existing logic to serve cached files
   // in offline mode.
   event.respondWith(
-<<<<<<< Updated upstream
-    getIdToken().then((idToken) =>
-      idToken
-        ? // if the token was retrieved we attempt an authorized fetch
-          // if anything goes wrong we fall back to the original request
-          fetchWithAuthorization(event.request, idToken).catch(() =>
-            fetch(event.request)
-          )
-        : // otherwise we return a fetch of the original request directly
-          fetch(event.request)
-=======
     getIdToken().then(
       idToken => idToken
         // if the token was retrieved we attempt an authorized fetch
@@ -158,16 +86,11 @@ self.addEventListener('fetch', (event) => {
         ? fetchWithAuthorization(event.request, idToken).catch(() => fetch(event.request))
         // otherwise we return a fetch of the original request directly
         : fetch(event.request)
->>>>>>> Stashed changes
     )
   )
 })
 
 // In service worker script.
-<<<<<<< Updated upstream
-self.addEventListener('activate', (event) => {
-=======
 self.addEventListener('activate', event => {
->>>>>>> Stashed changes
   event.waitUntil(clients.claim())
 })
