@@ -1,5 +1,4 @@
 export default {
-  mode: 'universal',
   target: 'server',
   head: {
     title: 'CM Learning',
@@ -38,7 +37,6 @@ export default {
   buildModules: ['@nuxt/typescript-build', '@nuxtjs/tailwindcss'],
   modules: [
     '@nuxtjs/axios',
-    '@nuxtjs/onesignal',
     '@nuxtjs/sentry',
     '@nuxtjs/pwa',
     '@nuxtjs/firebase',
@@ -85,15 +83,6 @@ export default {
     dsn:
       'https://0a4d49b8d1644ec78a00d21544e031f9@o292739.ingest.sentry.io/5393079',
   },
-  oneSignal: {
-    init: {
-      appId: '83dc5344-5310-4861-89b6-feb11cff9617',
-      allowLocalhostAsSecureOrigin: true,
-      welcomeNotification: {
-        disable: true,
-      },
-    },
-  },
   i18n: {
     locales: ['en', 'id'],
     defaultLocale: 'en',
@@ -130,14 +119,26 @@ export default {
   },
   firebase: {
     config: {
-      apiKey: 'AIzaSyCpzxozeU3RqgPrR62xadKPbWmVSrOSOro',
-      authDomain: 'cm-learning-next.firebaseapp.com',
-      databaseURL: 'https://cm-learning-next.firebaseio.com',
-      projectId: 'cm-learning-next',
-      storageBucket: 'cm-learning-next.appspot.com',
-      messagingSenderId: '982447278041',
-      appId: '1:982447278041:web:528c83480bd073955bfbc8',
-      measurementId: 'G-6XB3HG8F84',
+      production: {
+        apiKey: 'AIzaSyAqPWjG5cyIV93VzZc4IfKToeusKHJvuKM',
+        authDomain: 'cm-learning-bac59.firebaseapp.com',
+        databaseURL: 'https://cm-learning-bac59.firebaseio.com',
+        projectId: 'cm-learning-bac59',
+        storageBucket: 'cm-learning-bac59.appspot.com',
+        messagingSenderId: '793693680184',
+        appId: '1:793693680184:web:11662e6f2d8b0c532deccd',
+        measurementId: 'G-8Z3WG8LNQ9',
+      },
+      development: {
+        apiKey: 'AIzaSyCpzxozeU3RqgPrR62xadKPbWmVSrOSOro',
+        authDomain: 'cm-learning-next.firebaseapp.com',
+        databaseURL: 'https://cm-learning-next.firebaseio.com',
+        projectId: 'cm-learning-next',
+        storageBucket: 'cm-learning-next.appspot.com',
+        messagingSenderId: '982447278041',
+        appId: '1:982447278041:web:528c83480bd073955bfbc8',
+        measurementId: 'G-6XB3HG8F84',
+      },
     },
     services: {
       auth: {
@@ -146,6 +147,7 @@ export default {
       realtimeDb: true,
       performance: true,
       analytics: true,
+      remoteConfig: true,
     },
   },
 }
