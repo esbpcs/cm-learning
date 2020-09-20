@@ -27,12 +27,12 @@
                             </svg>
                 div(class="flex flex-wrap items-center mx-auto justify-between")
                     button(type="submit" class="inline-block w-auto mx-0 py-4 px-8 leading-none text-white bg-indigo-500 hover:bg-indigo-600 rounded shadow") Submit
-                    button(type="submit" class="inline-block w-auto py-4 px-8 leading-none text-white bg-indigo-500 hover:bg-indigo-600 rounded shadow" ) Cancel
+                    button(class="inline-block w-auto py-4 px-8 leading-none text-white bg-indigo-500 hover:bg-indigo-600 rounded shadow" ) Cancel
         Footer
 </template>
 <script lang="ts">
 import Vue from 'vue'
 export default Vue.extend({
-  name: 'CreatePostPage',
+	name: 'CreatePostPage',
 })
 </script>

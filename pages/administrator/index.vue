@@ -34,30 +34,30 @@
 import Vue from 'vue'
 // import Gravatar from 'vue-gravatar'
 export default Vue.extend({
-  name: 'AdministratorDashboard',
-  data() {
-    return {
-      postList: [
-        {
-          id: '1',
-          user: 'elangsbp',
-          email: 'elangsbp@mock.net',
-          title: 'How to Create a Website',
-          status: 'Published',
-          category: 'Web Development',
-          posted: '31 August 2020',
-        },
-        {
-          id: '2',
-          user: 'emily',
-          email: 'emily@mock.net',
-          title: 'How to Create a Vue.js',
-          status: 'Published',
-          category: 'Web Development',
-          posted: '31 August 2020',
-        },
-      ],
-    }
-  },
+	name: 'AdministratorDashboard',
+	data() {
+		return {
+			postList: [
+				{
+					id: '1',
+					user: 'elangsbp',
+					email: 'elangsbp@mock.net',
+					title: 'How to Create a Website',
+					status: 'Published',
+					category: 'Web Development',
+					posted: '31 August 2020',
+				},
+				{
+					id: '2',
+					user: 'emily',
+					email: 'emily@mock.net',
+					title: 'How to Create a Vue.js',
+					status: 'Published',
+					category: 'Web Development',
+					posted: '31 August 2020',
+				},
+			],
+		}
+	},
 })
 </script>

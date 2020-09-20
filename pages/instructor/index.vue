@@ -54,31 +54,31 @@
 <script lang="ts">
 import Vue from 'vue'
 export default Vue.extend({
-  name: 'InstructorDashboard',
-  data() {
-    return {
-      courseList: [
-        {
-          id: '1',
-          user: 'elangsbp',
-          email: 'elangsbp@mock.net',
-          title: 'How to Create a Website',
-          status: 'Published',
-          category: 'Web Development',
-          posted: '01 September 2020',
-        },
-        {
-          id: '2',
-          user: 'Test',
-          email: 'test@mock.net',
-          title: 'How to Create a Nuxt.js App',
-          status: 'Published',
-          category: 'Web Development',
-          posted: '01 September 2020',
-        },
-      ],
-    }
-  },
-  computed: {},
+	name: 'InstructorDashboard',
+	data() {
+		return {
+			courseList: [
+				{
+					id: '1',
+					user: 'elangsbp',
+					email: 'elangsbp@mock.net',
+					title: 'How to Create a Website',
+					status: 'Published',
+					category: 'Web Development',
+					posted: '01 September 2020',
+				},
+				{
+					id: '2',
+					user: 'Test',
+					email: 'test@mock.net',
+					title: 'How to Create a Nuxt.js App',
+					status: 'Published',
+					category: 'Web Development',
+					posted: '01 September 2020',
+				},
+			],
+		}
+	},
+	computed: {},
 })
 </script>

@@ -1,9 +1,9 @@
 <template lang="pug">
     .container.mx-auto.px-4
-    
+
             Header
             section(class="py-12 px-4")
-            
+
                 Notification
 
                 div(class="flex flex-wrap items-center text-center lg:text-left -mx-2")
@@ -20,6 +20,6 @@
 <script lang="ts">
 import Vue from 'vue'
 export default Vue.extend({
-  name: 'IndexPage',
+	name: 'IndexPage',
 })
 </script>

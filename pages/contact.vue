@@ -24,6 +24,6 @@
 <script lang="ts">
 import Vue from 'vue'
 export default Vue.extend({
-  name: 'ContactPage',
+	name: 'ContactPage',
 })
 </script>

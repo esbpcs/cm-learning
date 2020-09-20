@@ -20,36 +20,36 @@
 <script lang="ts">
 import Vue from 'vue'
 export default Vue.extend({
-  name: 'BlogPage',
-  data() {
-    return {
-      blogs: [
-        {
-          id: '1',
-          postName: 'Chips',
-          posted: '31 August 2020',
-          user: 'User 1',
-          description: 'Ahoy',
-          postThumbnail: 'images/img1.png',
-        },
-        {
-          id: '2',
-          postName: 'Dare ni makenai kara',
-          posted: '31 August 2020',
-          user: 'User 2',
-          description: 'Yo',
-          postThumbnail: 'images/office_square.jpg',
-        },
-        {
-          id: '3',
-          postName: 'Generic Post #3',
-          posted: '31 August 2020',
-          user: 'User 3',
-          description: 'Oh Irony',
-          postThumbnail: 'images/work.jpg',
-        },
-      ],
-    }
-  },
+	name: 'BlogPage',
+	data() {
+		return {
+			blogs: [
+				{
+					id: '1',
+					postName: 'Chips',
+					posted: '31 August 2020',
+					user: 'User 1',
+					description: 'Ahoy',
+					postThumbnail: 'images/img1.png',
+				},
+				{
+					id: '2',
+					postName: 'Dare ni makenai kara',
+					posted: '31 August 2020',
+					user: 'User 2',
+					description: 'Yo',
+					postThumbnail: 'images/office_square.jpg',
+				},
+				{
+					id: '3',
+					postName: 'Generic Post #3',
+					posted: '31 August 2020',
+					user: 'User 3',
+					description: 'Oh Irony',
+					postThumbnail: 'images/work.jpg',
+				},
+			],
+		}
+	},
 })
 </script>

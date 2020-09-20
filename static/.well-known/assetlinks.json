@@ -1,5 +1,12 @@
-[{
-      "relation": ["delegate_permission/common.handle_all_urls"],
-      "target" : { "namespace": "android_app", "package_name": "xyz.esbp.twa",
-                   "sha256_cert_fingerprints": ["99:F8:50:ED:E5:FC:68:10:99:3A:3F:46:5C:60:4B:A5:9F:5E:03:13:DE:69:79:1B:F7:8D:09:2E:1F:4E:DF:B3"] }
-    }]
+[
+	{
+		"relation": ["delegate_permission/common.handle_all_urls"],
+		"target": {
+			"namespace": "android_app",
+			"package_name": "xyz.esbp.twa",
+			"sha256_cert_fingerprints": [
+				"99:F8:50:ED:E5:FC:68:10:99:3A:3F:46:5C:60:4B:A5:9F:5E:03:13:DE:69:79:1B:F7:8D:09:2E:1F:4E:DF:B3"
+			]
+		}
+	}
+]
