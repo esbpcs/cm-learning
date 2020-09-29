@@ -1,0 +1,18 @@
+version = 1
+
+[[analyzers]]
+name = "test-coverage"
+enabled = true
+
+[[analyzers]]
+name = "javascript"
+enabled = true
+
+  [analyzers.meta]
+  plugins = ["vue"]
+  environment = [
+    "jest",
+    "nodejs"
+  ]
+  style_guide = "standard"
+  dialect = "typescript"
