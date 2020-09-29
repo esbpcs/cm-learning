@@ -28,19 +28,22 @@ export default {
 		],
 	},
 	publicRuntimeConfig: {
-		baseURL: process.env.BASE_URL,
+		baseURL: 'https://next.esbp.xyz' || 'https://esbp.xyz',
 	},
-	privateRuntimeConfig: {},
+	privateRuntimeConfig: {
+		testApi: '',
+	},
 	css: [],
 	plugins: [],
 	components: true,
 	buildModules: ['@nuxt/typescript-build', '@nuxtjs/tailwindcss'],
 	modules: [
-		'@nuxtjs/axios',
 		'@nuxtjs/sentry',
-		'@nuxtjs/pwa',
-		'@nuxtjs/firebase',
 		'nuxt-i18n',
+		'@nuxtjs/axios',
+		'@nuxtjs/auth',
+		'@nuxtjs/pwa',
+		// '@nuxtjs/firebase',
 	],
 	axios: {},
 	build: {
@@ -84,18 +87,71 @@ export default {
 			'https://0a4d49b8d1644ec78a00d21544e031f9@o292739.ingest.sentry.io/5393079',
 	},
 	i18n: {
-		locales: ['en', 'id'],
+		locales: [
+			{
+				code: 'en',
+				name: 'English',
+			},
+			{
+				code: 'id',
+				name: 'Bahasa Indonesia',
+			},
+		],
 		defaultLocale: 'en',
-		vue18n: {
+		vueI18n: {
 			fallbackLocale: 'en',
 			messages: {
 				en: {
-					login: 'Sign in',
-					register: 'Sign up',
+					indexPage: {
+						intro:
+							'CM Media Online Learning Platform created for helping the people to learn more about the Islam more deeper and help increase our faith to Allah and prepare us to meet him later.',
+						notification:
+							'Welcome to our site, currently our site on building process, please come back later !',
+					},
+					signForm: {
+						firstName: 'First Name:',
+						lastName: 'Last Name:',
+						confirmPass: 'Confirm Password:',
+						phone: 'Phone Number:',
+						login: 'Sign in',
+						register: 'Sign up',
+					},
+					roles: {
+						name: 'Roles:',
+						student: 'Student',
+						instructor: 'Instructor',
+					},
+					gender: {
+						name: 'Gender:',
+						male: 'Male',
+						female: 'Female',
+					},
 				},
 				id: {
-					login: 'Masuk',
-					register: 'Daftar',
+					indexPage: {
+						intro:
+							'CM Media Online Learning Platform merupakan media platform pembelajaran online',
+						notification:
+							'Selamat datang di situs kami, untuk saat ini situs ini sedang dalam proses pengembangan, silahkan kembali lagi nanti.',
+					},
+					signForm: {
+						firstName: 'Nama Depan:',
+						lastName: 'Nama Belakang:',
+						confirmPass: 'Konfirmasi Password:',
+						phone: 'No. Telepon:',
+						login: 'Masuk',
+						register: 'Daftar',
+					},
+					roles: {
+						name: 'Posisi:',
+						student: 'Siswa',
+						instructor: 'Instruktur',
+					},
+					gender: {
+						name: 'Jenis Kelamin:',
+						male: 'Ikhwan',
+						female: 'Akhwat',
+					},
 				},
 			},
 		},
@@ -117,37 +173,49 @@ export default {
 			dev: true,
 		},
 	},
-	firebase: {
-		config: {
-			production: {
-				apiKey: 'AIzaSyAqPWjG5cyIV93VzZc4IfKToeusKHJvuKM',
-				authDomain: 'cm-learning-bac59.firebaseapp.com',
-				databaseURL: 'https://cm-learning-bac59.firebaseio.com',
-				projectId: 'cm-learning-bac59',
-				storageBucket: 'cm-learning-bac59.appspot.com',
-				messagingSenderId: '793693680184',
-				appId: '1:793693680184:web:11662e6f2d8b0c532deccd',
-				measurementId: 'G-8Z3WG8LNQ9',
+	router: {
+		middleware: ['auth'],
+	},
+	auth: {
+		strategies: {
+			auth0: {
+				domain: 'esbpcs.au.auth0.com',
+				client_id: 'l4xytN16IIXFBYGR5AWPg4oI7NlyBTpD',
+				audience: '',
 			},
-			development: {
-				apiKey: 'AIzaSyCpzxozeU3RqgPrR62xadKPbWmVSrOSOro',
-				authDomain: 'cm-learning-next.firebaseapp.com',
-				databaseURL: 'https://cm-learning-next.firebaseio.com',
-				projectId: 'cm-learning-next',
-				storageBucket: 'cm-learning-next.appspot.com',
-				messagingSenderId: '982447278041',
-				appId: '1:982447278041:web:528c83480bd073955bfbc8',
-				measurementId: 'G-6XB3HG8F84',
-			},
-		},
-		services: {
-			auth: {
-				ssr: true,
-			},
-			realtimeDb: true,
-			performance: true,
-			analytics: true,
-			remoteConfig: true,
 		},
 	},
+	// firebase: {
+	// 	config: {
+	// 		production: {
+	// 			apiKey: 'AIzaSyAqPWjG5cyIV93VzZc4IfKToeusKHJvuKM',
+	// 			authDomain: 'cm-learning-bac59.firebaseapp.com',
+	// 			databaseURL: 'https://cm-learning-bac59.firebaseio.com',
+	// 			projectId: 'cm-learning-bac59',
+	// 			storageBucket: 'cm-learning-bac59.appspot.com',
+	// 			messagingSenderId: '793693680184',
+	// 			appId: '1:793693680184:web:11662e6f2d8b0c532deccd',
+	// 			measurementId: 'G-8Z3WG8LNQ9',
+	// 		},
+	// 		development: {
+	// 			apiKey: 'AIzaSyCpzxozeU3RqgPrR62xadKPbWmVSrOSOro',
+	// 			authDomain: 'cm-learning-next.firebaseapp.com',
+	// 			databaseURL: 'https://cm-learning-next.firebaseio.com',
+	// 			projectId: 'cm-learning-next',
+	// 			storageBucket: 'cm-learning-next.appspot.com',
+	// 			messagingSenderId: '982447278041',
+	// 			appId: '1:982447278041:web:528c83480bd073955bfbc8',
+	// 			measurementId: 'G-6XB3HG8F84',
+	// 		},
+	// 	},
+	// 	services: {
+	// 		auth: {
+	// 			ssr: true,
+	// 		},
+	// 		realtimeDb: true,
+	// 		performance: true,
+	// 		analytics: true,
+	// 		remoteConfig: true,
+	// 	},
+	// },
 }

@@ -27,7 +27,7 @@
 			"@types/node",
 			"@nuxt/types",
 			"nuxt-i18n",
-			"@nuxtjs/firebase"
+			// "@nuxtjs/firebase"
 		]
 	},
 	"exclude": [

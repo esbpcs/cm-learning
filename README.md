@@ -1,6 +1,6 @@
 # CM-Learning
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/21f33373-31d2-4d75-b70a-aced8ab00d7f/deploy-status)](https://app.netlify.com/sites/dev-cm/deploys) [![codecov](https://codecov.io/gh/esbpcs/cm-learning/branch/master/graph/badge.svg)](https://codecov.io/gh/esbpcs/cm-learning) [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fesbpcs%2Fcm-learning.svg?type=small)](https://app.fossa.com/projects/git%2Bgithub.com%2Fesbpcs%2Fcm-learning?ref=badge_small)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/21f33373-31d2-4d75-b70a-aced8ab00d7f/deploy-status)](https://app.netlify.com/sites/dev-cm/deploys) [![codecov](https://codecov.io/gh/esbpcs/cm-learning/branch/master/graph/badge.svg)](https://codecov.io/gh/esbpcs/cm-learning) [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fesbpcs%2Fcm-learning.svg?type=small)](https://app.fossa.com/projects/git%2Bgithub.com%2Fesbpcs%2Fcm-learning?ref=badge_small)[![DeepSource](https://deepsource.io/gh/esbpcs/cm-learning.svg/?label=active+issues&show_trend=true)](https://deepsource.io/gh/esbpcs/cm-learning/?ref=repository-badge)
 
 ## Build Setup
 

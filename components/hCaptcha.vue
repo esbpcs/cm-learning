@@ -1,5 +1,5 @@
 <template lang="pug">
-    VueCaptcha
+VueCaptcha
 </template>
 <script>
 import VueCaptcha from '@hcaptcha/vue-hcaptcha'
